@@ -1,0 +1,40 @@
+{
+  "manifest_version": 1,
+  "version": 1,
+  "type": "APP",
+  "desktop": {
+    "js": [
+      "https://js.kintone.com/momentjs/2.22.1/moment.min.js",
+      "https://js.kintone.com/jquery/3.3.1/jquery.min.js",
+      "https://js.kintone.com/jsrender/0.9.90/jsrender.min.js",
+      "js/desktop.js"
+    ],
+    "css": [
+      "css/51-modern-default.css",
+      "css/desktop.css"
+    ]
+  },
+  "icon": "image/icon.png",
+  "config": {
+    "html": "html/config.html",
+    "js": [
+      "https://js.kintone.com/jquery/2.2.4/jquery.min.js",
+      "https://js.kintone.com/jsrender/0.9.90/jsrender.min.js",
+      "js/config.js"
+    ],
+    "css": [
+      "css/51-modern-default.css",
+      "css/config.css"
+    ],
+    "required_params": [
+      "dayField",
+      "dateField"
+    ]
+  },
+  "name": {
+    "en": "DaysOfTheWeek"
+  },
+  "description": {
+    "en": "DaysOfTheWeek"
+  }
+}
