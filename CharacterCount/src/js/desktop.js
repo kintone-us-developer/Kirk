@@ -29,7 +29,7 @@ jQuery.noConflict();
   }
 
   }
-console.log('app.record.create.show');
+
       /*<textarea name="31_5521618" id="31_5521618-textarea"
        class="textarea-cybozu" style="box-sizing: border-box;
         width: 297px; height: 123px;"></textarea>*/
