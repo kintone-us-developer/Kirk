@@ -13,45 +13,31 @@ jQuery.noConflict();
             'app.record.create.show',
             'app.record.index.edit.show'];
   var change=['app.record.create.change.'+countField];
-  var i = 0;
+  var chars;
+  var removeSpaces;
 
-  document.onkeyup=function(e){
-    count = document.getElementById("31_5521622-:14-text").value;
-    if(e.keyCode==8){
+/*    <textarea name="31_5521618" id="31_5521618-textarea"
+   class="textarea-cybozu" style="box-sizing: border-box;
+    width: 297px; height: 123px;"></textarea>*/
 
-    document.getElementById("31_5521622-:14-text").value=document.getElementById("31_5521622-:14-text").value-1;
-  }
-  else{
-     e = e || window.event;
-    document.getElementById("31_5521622-:14-text").value=i+1;
+    /* <input id="31_5521622-:14-text" type="text"
+    class="input-text-cybozu input-number-cybozu"
+     min="null" max="null" step="null" disabled="">  */
+     var keyUp = function(textArea){
+       document.getElementById("31_5521618-textarea").onkeyup=function(){
 
-    i++;
-  }
+         chars = document.getElementById("31_5521618-textarea").value;
+         removeSpaces=chars.replace(/[\W]/g,"");
+         document.getElementById("31_5521622-:14-text").value = removeSpaces.length;
 
-  }
+         return;
+       };
+     };
 
-      /*<textarea name="31_5521618" id="31_5521618-textarea"
-       class="textarea-cybozu" style="box-sizing: border-box;
-        width: 297px; height: 123px;"></textarea>*/
-
-        /* <input id="31_5521622-:14-text" type="text"
-        class="input-text-cybozu input-number-cybozu"
-         min="null" max="null" step="null" disabled=""> */
-
-  kintone.events.on(change,function(event){
-    console.log('hi');
-  });
-
-  kintone.events.on(load,function(event){
-  event.record[countField].disabled=true;
-
-
-  return event;
-});
-
-
-
-
-
+     kintone.events.on(load,function(event){
+       event.record[countField].disabled=true;
+       keyUp(textField);
+       return event;
+     });
 
 })(jQuery, kintone.$PLUGIN_ID);
